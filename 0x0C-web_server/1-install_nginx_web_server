@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# A script that intalls nginx and configure it to listen on port 80
+# print "Hello World!"
+
+sudo apt-get update
+sudo apt-get -y install nginx
+sudo mkdir -p /var/www/html
+chown -R $USER:$USER /var/www/html
+sudo 755 -R /var/www
+echo 'Hello World!' > /var/www/html/index.html
+sudo service nginx restart
+
