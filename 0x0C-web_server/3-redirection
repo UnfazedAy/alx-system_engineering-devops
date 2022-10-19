@@ -1,13 +1,30 @@
 #!/usr/bin/env bash
-# A script that configure your Nginx server so that /redirect_me is redirecting to another page.
-
-sudo apt-get update
-sudo apt-get -y install nginx
+# Installs, configures, and starts the server
+sudo apt get update
+apt-get -y install nginx
 sudo ufw allow 'Nginx HTTP'
-sudo mkdir -p /var/www/html
-chown -R "$USER":"$USER" /var/www/html
-sudo 755 -R /var/www
+mkdir -p /var/www/html/
+sudo chmod -R 755 /var/www
 echo 'Hello World!' > /var/www/html/index.html
-sed -i 'server_name/location/redirect_me {return 301 https: www.alxafrica.com;}' /etc/nginx/sites-available/default
-sudo service nginx restart
+SERVER_CONFIG=\
+"server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+	root /var/www/html;
+	index index.html index.htm index.nginx-debian.html;
+	server_name _;
+	location / {
+		try_files \$uri \$uri/ =404;
+	}
+	if (\$request_filename ~ redirect_me){
+		return 301 https://alxafrica.com;
+	}
+}"
 
+bash -c "echo -e '$SERVER_CONFIG' > /etc/nginx/sites-enabled/default"
+
+if [ "$(pgrep -c nginx)" -le 0 ]; then
+	service nginx start
+else
+	service nginx restart
+fi
