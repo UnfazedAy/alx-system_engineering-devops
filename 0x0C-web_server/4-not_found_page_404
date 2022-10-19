@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# A script that configure your Nginx server so that /redirect_me is redirecting to another page.
+
+sudo apt-get update
+sudo apt-get -y install nginx
+sudo ufw allow 'Nginx HTTP'
+sudo mkdir -p /var/www/html
+chown -R "$USER":"$USER" /var/www/html
+sudo 755 -R /var/www
+echo 'Hello World!' > /var/www/html/index.html
+sed -i 'server_name/location/redirect_me {return 301 https: www.alxafrica.com;}' /etc/nginx/sites-available/default
+sed -i 'server_name/error_page_404 /404.html; location/404.html {root /var/www/error_page_404;internal;}' /etc/mginx/sites-available/default
+sudo service nginx restart
+
