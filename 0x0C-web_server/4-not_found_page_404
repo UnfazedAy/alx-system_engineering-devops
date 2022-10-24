@@ -3,6 +3,8 @@
 apt-get -y update
 apt-get -y install nginx
 sudo mkdir -p /var/www/html
+chown -R $USER:$USER /var/www/html
+sudo 755 -R /var/www
 sudo touch index.html
 echo "Hello World!" > /var/www/html/index.html
 sudo touch 404.html
