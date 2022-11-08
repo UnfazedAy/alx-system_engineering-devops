@@ -1,1 +1,2 @@
+#!/usr/bin/bash
 runuser -l '$1" whoami
