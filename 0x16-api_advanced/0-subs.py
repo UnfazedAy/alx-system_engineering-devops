@@ -12,7 +12,7 @@ def number_of_subscribers(subreddit):
     """
     # sets custom user-agent
     user_agent = '0x16-api_advanced-UnfazedAy'
-    url = 'https://www.reddit.com/r/{subreddit}.json'.format(subreddit)
+    url = 'https://www.reddit.com/r/{}.json'.format(subreddit)
 
     # custom user agent avoids request-limit
     headers = {'User-Agent': user_agent}
