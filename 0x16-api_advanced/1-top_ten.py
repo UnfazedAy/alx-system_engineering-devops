@@ -19,7 +19,7 @@ def top_ten(subreddit):
 
     response = get(url, headers=headers, allow_redirects=False)
 
-    if response.status_code != 200:
+    if subreddit is None or type(subreddit) is not str:
         return None
     else:
         data = response.json()['data']
