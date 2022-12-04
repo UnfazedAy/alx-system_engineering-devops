@@ -1,3 +1,7 @@
+### Screenshot
+
+![frustratedwoman](https://user-images.githubusercontent.com/101446360/205510911-b7cac3ab-f1c2-48b9-a718-65f5b78171d2.jpg)
+
 # Postmortem
 Upon the release of Alx project 0x14. Mysql at approximately 18:30 and 19:00 West African Time(WAT) in Nigeria, an error occurred when I tried installing MySQL distribution 5.7.x on my server  web-01 and it returned a broken installation error which led to me being unable to set up a primary replica infrastructure using Mysql at that point in time.  The root cause was that I already had the current version when I tried to install an older version.
 # Timeline
