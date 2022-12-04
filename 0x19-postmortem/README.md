@@ -10,12 +10,12 @@ The issue was detected at approximately 19:00 WAT on Tuesday, November 2022 afte
 Bug debugger Ayomide Soniyi a.k.a Ay encountered the error upon installation and the root cause was that I already had the current version when I tried to install an older version. I promptly proceeded to undergo solving the problem.
 Checked to see if any version of mysql was installed by entering the command mysql –version.
 sudo apt-get purge mysql\*
-sudo rm -rf /var/lib/mysql
-sudo rm -rf /etc/mysql
-sudo dpkg -l | grep -i mysql
-sudo apt-get clean
-sudo updatedb
-sudo apt-get install mysql-client-core-5.7 mysql-client-5.7 mysql-server-5.7.
+- sudo rm -rf /var/lib/mysql
+- sudo rm -rf /etc/mysql
+- sudo dpkg -l | grep -i mysql
+- sudo apt-get clean
+- sudo updatedb
+- sudo apt-get install mysql-client-core-5.7 mysql-client-5.7 mysql-server-5.7.
 # Preventive measures
-If not necessary try not to install an older version of a package or language.
-If an older version is needed, make sure to delete the current version and install it. 
+- If not necessary try not to install an older version of a package or language.
+- If an older version is needed, make sure to delete the current version and install it. 
