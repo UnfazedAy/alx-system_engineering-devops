@@ -1,4 +1,4 @@
-### Screenshot
+###
 
 ![frustratedwoman](https://user-images.githubusercontent.com/101446360/205510911-b7cac3ab-f1c2-48b9-a718-65f5b78171d2.jpg)
 
